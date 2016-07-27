@@ -3,11 +3,11 @@
 
 <!-- Articles -->
 <div class="container-fluid">
-  <div class="row">
+  <div class="row textblock">
     <%= render partial: "shared/article", collection: @articles %>
   </div>
+  <br>
+  <%= link_to 'New Article', new_article_path %>
 </div>
 
-<br>
 
-<%= link_to 'New Article', new_article_path %>
