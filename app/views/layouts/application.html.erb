@@ -34,14 +34,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="static_pages/index"><%= image_tag("astraherz.png", class: "img-responsive") %></a>
+          <a> <%= link_to image_tag("astraherz.png", class: "img-responsive"), "/", class: "navbar-brand" %></a>
         </div>
 
         <!-- Alle Navigationslinks, Formulare und anderer Inhalt werden hier zusammengefasst und können dann ein- und ausgeblendet werden -->
         <div class="collapse navbar-collapse" id="blog-navigation">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="static_pages/about">Über<span class="sr-only">(aktuell)</span></a></li>
-            <li><a href="static_pages/contact">Kontakt</a></li>
+            <li><%= link_to "Über", static_pages_about_path, class: "active"%><span class="sr-only">(aktuell)</span></a></li>
+            <li><%= link_to "Kontakt", static_pages_contact_path%></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
