@@ -1,2 +1,25 @@
-<h1>StaticPages#index</h1>
-<p>Find me in app/views/static_pages/index.html.erb</p>
+<!-- Header -->
+<header class="jumbotron" style="background-image: url(<%= asset_path 'pauli.jpg', class: "img-responsive" %>)">
+	<div class="container-fluid">
+		<h1 style="text-align:center">Neues vom Kiez</h1>
+		<h2 style="text-align:center">Skurilles und Alltägliches aus St. Pauli</h2>
+	</div>
+</header>
+
+<!-- Main -->
+<div class="container-fluid main">
+	<div class="row">
+		<!-- StaticArticles -->
+		<div class="col-xs-8 static_articles"> 
+			<%= render partial: "shared/article", collection: @articles %>
+		</div>
+		<!-- Social Media -->
+		<div class="col-xs-4 socialmedia">
+			<ul class="social">
+				<li>Facebook</li>
+				<li>Twitter</li>
+				<li>Instagram</li>
+			</ul>
+		</div>
+	</div>
+</div>

@@ -1,3 +1,78 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*** Static Pages ***/
+
+/*Main*/
+body {
+	padding-top: 50px;
+	padding-bottom: 70px;
+	margin: 0;
+	background-image: image-url('zeichnung.jpg');
+	background-repeat: repeat;
+	background-attachment: fixed;
+	background-size: 100%; 
+}
+/*Navigation*/
+.navbar-inverse 
+.navbar-nav > li > a {
+  color: white;
+}
+.navbar-brand {
+	padding: 0;
+	background-color: white;
+}
+/*Footer*/
+footer p{
+	margin: 10px 0 0 0;
+	text-align: center;
+}
+/*Typography*/
+h1,
+h2,
+p,
+a {font-family: oswald, verdana, arial, helvetica, sans-serif;
+}
+
+h1,
+h2 {
+	font-variant: small-caps;
+}
+
+/*** index ***/
+/*Header*/
+.jumbotron {
+	background-size: cover;
+	background-position: 10% 70%;
+	font-weight: bolder;
+	color: white;
+	width: 100vw;
+	margin-top: 0.5%;
+}
+/*Main*/
+.main {
+	margin: 0 5% 0 5%;
+}
+/*StaticArticles*/
+.static_articles {
+	background-color: rgba(238, 238, 238, 0.94);
+}
+/*Social Media*/
+.socialmedia {
+	background-color: white;
+}
+.social {
+}
+
+/*** Kontakt ***/
+.kontakt {
+	background-color: rgba(238, 238, 238, 0.94);
+}
+.kontakt li {
+	text-align: center;
+}
+.glyphicon {
+	font-size: 2em;
+}
+

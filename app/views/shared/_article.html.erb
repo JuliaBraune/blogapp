@@ -1,0 +1,10 @@
+<div class="col-12-xs">
+	<br>
+  <p><%= article.category %> | <span><%= article.date %></span></p>
+  <a><%= image_tag(article.image_url, class: "img-responsive center-block") %></a>
+  <h2><%= article.header %></h2>
+  <p class="text"><%= article.description %></p>
+  <p colspan="3" style="color: grey"><%= link_to 'Show', article %> | <%= link_to 'Edit', edit_article_path(article) %> | <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <br>
+</div>
+<hr>

@@ -1,14 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Blogapp</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title>Because I can</title>
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- CSS-file -->
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track'=>true %>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+    <!-- Javascript -->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' =>true %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target=".navbar">
+    <!-- navigation-bar -->
+    <nav class="navbar navbar-inverse navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Titel und Schalter werden für eine bessere mobile Ansicht zusammengefasst -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="blog-navigation" aria-expanded="false">
+            <span class="sr-only">Navigation ein-/ausblenden</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index"><%= image_tag("astraherz.png", class: "img-responsive") %></a>
+        </div>
+
+        <!-- Alle Navigationslinks, Formulare und anderer Inhalt werden hier zusammengefasst und können dann ein- und ausgeblendet werden -->
+        <div class="collapse navbar-collapse" id="blog-navigation">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="about">Über<span class="sr-only">(aktuell)</span></a></li>
+            <li><a href="contact">Kontakt</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    
     <%= yield %>
+
+    <!-- fixed footer -->
+    <footer class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container-fluid">
+        <p>Julia Braune &copy 2016</p>
+      </div>
+    </footer> <!-- /.footer -->
+
   </body>
 </html>

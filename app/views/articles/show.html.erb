@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12-xs textblock">
+      <p><%= @article.category %> <span><%= @article.date %></span></p>
+      <a><%= image_tag(@article.image_url, class: "img-responsive center-block") %></a>
+      <h2><%= @article.header %></h2>
+      <p class="text"><%= @article.description %></p>
+    </div>
+  </div>
+  <%= link_to 'Edit', edit_article_path(@article) %> | <%= link_to 'Back', articles_path %>
+</div>
+  
+
+
+
+
+
+
