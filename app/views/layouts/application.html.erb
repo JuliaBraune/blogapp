@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
 
-    <title>Because I can</title>
+    <title>Julias Blog-Dummy</title>
     
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -42,6 +42,14 @@
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Über", static_pages_about_path, class: "active"%><span class="sr-only">(aktuell)</span></a></li>
             <li><%= link_to "Kontakt", static_pages_contact_path%></li>
+            <!-- login/logout -->
+            <li>
+              <% if user_signed_in? %> 
+                <%= link_to "Ausloggen", destroy_user_session_path, :method => :delete%>
+              <% else %>
+                <%= link_to "Einloggen", new_user_session_path %>
+              <% end %>
+            </li>  
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
