@@ -1,16 +1,22 @@
-<h2>Forgot your password?</h2>
+<br>
+<div class="container-fluid new_session">
+  <div class="form-signin">
+    <h2 class="form-signin-heading">Passwort vergessen?</h2>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+		<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+		  <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+		  <div class="field">
+		    <%= f.label :email %>
+		    <%= f.email_field :email, autofocus: true, class: "form-control"  %>
+		  </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+		  <div class="actions">
+		    <%= f.submit "Schick' mir Mail für neues Passwort", class: "btn btn-primary btn-lg btn-block" %>
+		  </div>
+		<% end %>
 
-<%= render "devise/shared/links" %>
+		<%= render "devise/shared/links" %>
+		<br>
+	</div>
+</div>

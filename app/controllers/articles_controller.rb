@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  # before_action :set_article, only: [:show]
+  # before_filter :authenticate_user!
+  # load_and_authorize_resource
 
   # GET /articles
   # GET /articles.json
@@ -28,7 +30,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
+        format.html { redirect_to @article, notice: 'Artikel wurde erfolgreich erstellt.' }
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+        format.html { redirect_to @article, notice: 'Artikel wurde erfolgreich upgedatet.' }
         format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit }
@@ -56,7 +58,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     respond_to do |format|
-      format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
+      format.html { redirect_to articles_url, notice: 'Artikel wurde erfolgreich gelöscht.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +71,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:category, :description, :image_url, :date, :header)
+      params.require(:article).permit(:category, :description, :image_url, :date, :header, :users)
     end
 end
